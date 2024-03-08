@@ -1,0 +1,7 @@
+enqueue()
+dequeue()
+isEmpty()
+front()
+isFull()
+size()
+printQueue()
