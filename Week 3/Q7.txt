@@ -1,0 +1,7 @@
+        	        exec()	                                                fork()
+Description:	    Replaces the current process image with a new one	    Creates a new process by duplicating the existing one
+Return Value:	    Does not return unless an error occurs	                Returns twice - once in the parent, once in the child
+Child Process:	    Not applicable, as exec() replaces the current process	Created as a copy of the parent process
+Parent Process:	    Continues execution if exec() is successful	            Continues execution after fork() call
+Process ID:	        Process ID remains the same after exec()	            Parent and child processes have different Process IDs
+Context:	        Context of the calling process is lost	                Context of the calling process is preserved

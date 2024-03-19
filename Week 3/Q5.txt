@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <pthread.h>
+
+pthread_mutex_t mutex;
+pthread_cond_t condition;
+
+void *thread1(void *arg) {
+    pthread_mutex_lock(&mutex);
+    printf("hello\n");
+    pthread_cond_signal(&condition);
+    pthread_mutex_unlock(&mutex);
+    return NULL;
+}
+
+void *thread2(void *arg) {
+    pthread_mutex_lock(&mutex);
+    pthread_cond_wait(&condition, &mutex);
+    printf("world\n");
+    pthread_mutex_unlock(&mutex);
+    return NULL;
+}
+
+int main() {
+    pthread_t tid1, tid2;
+
+    pthread_mutex_init(&mutex, NULL);
+    pthread_cond_init(&condition, NULL);
+
+    pthread_create(&tid1, NULL, thread1, NULL);
+    pthread_create(&tid2, NULL, thread2, NULL);
+
+    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
+
+    pthread_mutex_destroy(&mutex);
+    pthread_cond_destroy(&condition);
+
+    return 0;
+}

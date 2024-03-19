@@ -1,0 +1,8 @@
+1. user press ctrl+C
+    SIGTERM 
+2. kill() system call is invoked
+    SIGKILL 
+3. CPU tried to execute an illegal instruction
+    SIGILL 
+4. When the program access the unassigned memory
+    SIGSEGV 

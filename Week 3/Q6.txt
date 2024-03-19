@@ -1,0 +1,7 @@
+Race condition & Deadlocks
+
+To prevent race scenarios, utilise synchronisation methods like as mutex locks or semaphores to guarantee that only one thread may 
+access shared resources at a time. Use atomic operations or thread-safe data structures as appropriate. Deadlocks may be avoided by 
+requiring a tight ordering of resource acquisition, which ensures that threads never hold one resource while waiting for another held 
+by another thread. Use timeout mechanisms and resource hierarchy to break possible deadlocks. Proper design, avoiding nested locks, 
+and limiting the scope of important parts may help to reduce race situations and deadlocks.

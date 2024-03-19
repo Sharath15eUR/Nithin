@@ -1,0 +1,15 @@
+1. To run the current executable file
+    run [args] eg: run 10
+
+2. To create breakpoints at
+    break [function_name] or break [line_number] or break *[address] or break [file_name] : [line_number] or break [above arguments] if condition or above can be written by replacing break with ‘b’ .
+
+3. To resume execution once after breakpointcontinue or c / c [ repeat_count]
+
+4. To clear break point created for a function
+    clear [ FUNCTION_NAME]
+
+5. Print the parameters of the function in the backtrace
+    bt/backtrace
+    Frame/up/down
+    info args
