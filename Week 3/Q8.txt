@@ -3,26 +3,26 @@ Definition	    A process is an independent unit of         A thread is a lightwe
                 execution, consisting of its own memory     sharing the same memory space and resources.
                 space, resources, and state.	
 
-Creation	    Processes are created using system          Threads are created within a process using threading libraries    
-                calls like fork() or exec().	            like pthreads or Win32 threads.
+Creation	      Processes are created using system          Threads are created within a process using threading libraries    
+                calls like fork() or exec().	              like pthreads or Win32 threads.
 
-Overhead	    Processes have higher overhead due          Threads have lower overhead since they share memory and 
+Overhead	      Processes have higher overhead due          Threads have lower overhead since they share memory and 
                 to separate memory space and resource       resources within the same process
                 allocation.	
 
-Communication	Inter-process communication (IPC)           Threads within the same process can communicate directly 
+Communication	  Inter-process communication (IPC)           Threads within the same process can communicate directly 
                 mechanisms like pipes, sockets, or          through shared variables or synchronized mechanisms 
                 shared memory are used for communication    like mutexes and condition variables.
                 between processes.                         
 
 Concurrency	    Processes run concurrently and              Threads within the same process run concurrently and share resources,
-                independently of each other.	            allowing for parallel execution.
+                independently of each other.	              allowing for parallel execution.
 
 Context Switch	Context switching between processes         Context switching between threads within the same process is faster  
                 involves higher overhead due to switching   since they share the same memory space and resources.
                 memory spaces and resources.	
 
-Stability	    Processes are more stable and less prone    Threads are less stable, as a crash in one thread can potentially 
+Stability	      Processes are more stable and less prone    Threads are less stable, as a crash in one thread can potentially 
                 to crashing, as failure in one Process      affect other threads within the same process.
                 typically does not affect others. 	
 
